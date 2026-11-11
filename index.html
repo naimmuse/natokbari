@@ -90,7 +90,6 @@ a.ep{width:100%}
 (function(){
   var secs = Array.prototype.slice.call(document.querySelectorAll(".series"));
   secs.forEach(function(sec){
-    sec.classList.add("open");
     var h = sec.querySelector(".shead");
     if(h) h.addEventListener("click", function(){ sec.classList.toggle("open"); });
   });
