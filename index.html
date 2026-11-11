@@ -91,7 +91,7 @@ a.ep{width:100%}
   var secs = Array.prototype.slice.call(document.querySelectorAll(".series"));
   secs.forEach(function(sec){
     var h = sec.querySelector(".shead");
-    if(h) h.addEventListener("click", function(){ sec.classList.toggle("open"); });
+    if(h) h.addEventListener("click", function(){ var willOpen = !sec.classList.contains("open"); sec.classList.toggle("open"); if(willOpen && sec.scrollIntoView) sec.scrollIntoView({behavior:"smooth", block:"start"}); });
   });
   var q = document.getElementById("q");
   if(q){
